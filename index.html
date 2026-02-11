@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Telos Network Dashboard</title>
-<script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--cyan:#00F2FE;--blue:#4FACFE;--purple:#C471F5;--bg:#0a0a14;--card:#12121f;--card-border:#1a1a2e;--text:#e0e0e0;--text-dim:#7a7a9a;--glow:rgba(0,242,254,0.15)}
@@ -285,7 +285,7 @@ function drawSparkline(canvasId,data,color){
 }
 
 // ─── Data Fetching ───
-const RPC='https://mainnet.telos.net/evm';
+const RPC='https://rpc.telos.net';
 const provider=new ethers.providers.JsonRpcProvider(RPC);
 
 function fmt(n,d=1){
