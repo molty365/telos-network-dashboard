@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telos Network Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+</head>
+<body>
+    <div id="background-animation"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>telos</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#validators" class="nav-link">Validators</a>
+                <a href="#charts" class="nav-link">Charts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Telos Network Analytics</h2>
+                    <p class="hero-subtitle">Real-time network statistics and blockchain data</p>
+                </div>
+                <div class="globe-container">
+                    <canvas id="globe-canvas" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card" data-stat="tps">
+                        <div class="stat-header">
+                            <h3>TPS</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="value">--</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-stat="blocktime">
+                        <div class="stat-header">
+                            <h3>Block Time</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="value">--</span>
+                            <span class="unit">s</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-stat="gasprice">
+                        <div class="stat-header">
+                            <h3>Gas Price</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="value">--</span>
+                            <span class="unit">Gwei</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-stat="price">
+                        <div class="stat-header">
+                            <h3>TLOS Price</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="currency">$</span>
+                            <span class="value">--</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-stat="staked">
+                        <div class="stat-header">
+                            <h3>Total Staked</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="value">--</span>
+                            <span class="unit">M TLOS</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-stat="marketcap">
+                        <div class="stat-header">
+                            <h3>Market Cap</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="currency">$</span>
+                            <span class="value">--</span>
+                            <span class="unit">M</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-stat="validators">
+                        <div class="stat-header">
+                            <h3>Validators</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="value">--</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card" data-stat="apy">
+                        <div class="stat-header">
+                            <h3>Staking APY</h3>
+                            <div class="stat-status success"></div>
+                        </div>
+                        <div class="stat-value">
+                            <span class="value">4.0</span>
+                            <span class="unit">%</span>
+                        </div>
+                        <div class="stat-chart">
+                            <canvas width="200" height="60"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="stat-card wide" data-stat="blocks">
+                        <div class="stat-header">
+                            <h3>Recent Blocks</h3>
+                            <div class="stat-status loading"></div>
+                        </div>
+                        <div class="blocks-list">
+                            <div class="block-item loading">
+                                <span class="block-number">Loading...</span>
+                                <span class="block-time">--</span>
+                                <span class="block-txs">-- txs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Telos Network Analytics</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
